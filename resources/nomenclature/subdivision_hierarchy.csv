@@ -1,0 +1,369 @@
+country_code,iso_category_id,iso_category_name,iso_region_amount,number_gadm_regions,number_ne_regions
+AND,262,parish,7,7,7
+ARE,199,emirate,7,7,9
+AFG,321,province,34,34,34
+ATG,298,dependency,2,8,8
+ATG,429,parish,6,,
+ALB,322,county,12,12,12
+ARM,106,region,10,11,11
+ARM,189,city,1,,
+AGO,155,province,18,18,18
+ARG,107,province,23,24,24
+ARG,182,city,1,,
+AUT,392,state,9,9,9
+AUS,324,territory,2,11,11
+AUS,393,state,6,,
+AZE,108,municipality,11,10,78
+AZE,325,rayon,66,,
+AZE,357,autonomous republic,1,,
+BIH,237,entity,2,3,18
+BIH,438,district with special status,1,,
+BRB,430,parish,11,11,11
+BGD,149,district,64,7,7
+BGD,274,division,8,,
+BEL,390,province,10,3,11
+BEL,391,region,3,,
+BFA,192,region,13,13,45
+BFA,235,province,45,,
+BGR,361,district,28,28,28
+BHR,338,governorate,4,5,5
+BDI,275,province,18,17,17
+BEN,276,department,12,12,12
+BRN,362,district,4,4,4
+BOL,231,department,9,9,9
+BES,272,special municipality,3,3,
+BRA,193,state,26,27,27
+BRA,403,federal district,1,,
+BHS,100,district,31,32,30
+BHS,474,island,1,,
+BTN,152,district,20,20,20
+BWA,277,district,10,16,15
+BWA,447,town,4,,
+BWA,448,city,2,,
+BLR,102,city,1,6,7
+BLR,411,oblast,6,,
+BLZ,297,district,6,6,6
+CAN,233,territory,3,13,13
+CAN,412,province,10,,
+COD,278,province,25,26,11
+COD,404,city,1,,
+CAF,194,economic prefecture,2,17,17
+CAF,339,prefecture,14,,
+CAF,446,commune,1,,
+COG,279,department,12,12,12
+CHE,153,canton,26,26,26
+CIV,460,autonomous district,2,14,19
+CIV,461,district,12,,
+CHL,364,region,16,16,16
+CMR,130,region,10,10,10
+CHN,103,province,23,31,32
+CHN,195,autonomous region,5,,
+CHN,268,special administrative region,2,,
+CHN,397,municipality,4,,
+COL,104,department,32,32,34
+COL,143,capital district,1,,
+CRI,318,province,7,7,7
+CUB,365,province,15,16,16
+CUB,441,special municipality,1,,
+CPV,196,municipality,22,22,22
+CPV,313,geographical region,2,,
+CYP,266,district,6,5,5
+CZE,154,region,13,14,14
+CZE,197,district,76,,
+CZE,465,capital city,1,,
+DEU,198,Land,16,16,16
+DJI,218,region,5,5,6
+DJI,401,city,1,,
+DNK,319,region,5,5,5
+DMA,219,parish,10,10,10
+DOM,105,province,31,32,32
+DOM,183,district,1,,
+DOM,449,region,10,,
+DZA,366,province,58,48,48
+ECU,320,province,24,24,24
+EST,407,county,15,16,15
+EST,483,urban municipality,15,,
+EST,484,rural municipality,64,,
+EGY,316,governorate,27,27,27
+ERI,317,region,6,6,6
+ESP,101,autonomous community,17,18,52
+ESP,180,autonomous city in North Africa,2,,
+ESP,408,province,50,,
+ETH,363,regional state,11,11,11
+ETH,409,administration,2,,
+FIN,150,region,19,5,18
+FJI,353,dependency,1,5,5
+FJI,410,division,4,,
+FJI,450,province,14,,
+FSM,181,state,4,4,4
+FRA,151,metropolitan department,95,13,101
+FRA,240,metropolitan region,12,,
+FRA,305,dependency,1,,
+FRA,368,overseas collectivity,5,,
+FRA,475,metropolitan collectivity with special status,3,,
+FRA,489,overseas collectivity with special status,1,,
+FRA,490,overseas territory,1,,
+FRA,493,European collectivity,1,,
+FRA,494,overseas unique territorial collectivity,2,,
+FRA,495,overseas departmental collectivity,3,,
+GAB,394,province,9,9,9
+GBR,112,council area,32,4,232
+GBR,113,two-tier county,25,,
+GBR,283,district,11,,
+GBR,284,unitary authority,80,,
+GBR,369,metropolitan district,36,,
+GBR,370,London borough,32,,
+GBR,402,city corporation,1,,
+GBR,491,country,3,,
+GBR,492,province,1,,
+GRD,242,parish,6,7,7
+GRD,351,dependency,1,,
+GEO,201,region,9,12,12
+GEO,299,autonomous republic,2,,
+GEO,314,city,1,,
+GHA,114,region,16,10,10
+GRL,243,municipality,5,5,6
+GMB,225,division,5,6,6
+GMB,442,city,1,,
+GIN,184,governorate,1,8,34
+GIN,346,administrative region,7,,
+GIN,415,prefecture,33,,
+GNQ,244,province,8,7,7
+GNQ,300,region,2,,
+GRC,185,self-governed part,1,8,14
+GRC,202,administrative region,13,,
+GTM,372,department,22,22,22
+GNB,139,autonomous sector,1,9,9
+GNB,301,province,3,,
+GNB,416,region,8,,
+GUY,302,region,10,10,10
+HND,203,department,18,18,18
+HRV,115,county,20,21,21
+HRV,347,city,1,,
+HTI,116,department,10,10,10
+HUN,204,county,19,20,43
+HUN,245,city with county rights,23,,
+HUN,406,capital city,1,,
+IDN,159,geographical unit,7,33,33
+IDN,205,province,36,,
+IDN,269,special region,1,,
+IDN,358,capital district,1,,
+IRL,246,county,26,26,34
+IRL,417,province,4,,
+ISR,354,district,6,7,6
+IND,327,Union territory,8,36,36
+IND,373,state,28,,
+IRQ,160,governorate,18,18,18
+IRQ,496,region,1,,
+IRN,418,province,31,31,31
+ISL,419,region,8,8,9
+ISL,485,municipality,64,,
+ITA,117,region,15,20,110
+ITA,374,province,80,,
+ITA,479,free municipal consortium,6,,
+ITA,480,metropolitan city,14,,
+ITA,481,autonomous province,2,,
+ITA,482,autonomous region,5,,
+ITA,486,decentralized regional entity,4,,
+JAM,118,parish,14,14,14
+JOR,420,governorate,12,12,12
+JPN,247,prefecture,47,47,47
+KEN,451,county,47,47,8
+KGZ,187,city,2,9,8
+KGZ,328,region,7,,
+KHM,206,autonomous municipality,1,25,24
+KHM,342,province,24,,
+KIR,431,group of islands (20 inhabited islands),3,1,2
+COM,174,island,3,3,3
+KNA,375,parish,14,14,14
+KNA,432,state,2,,
+PRK,140,special city,1,14,11
+PRK,207,province,9,,
+PRK,356,capital city,1,,
+PRK,473,metropolitan city,2,,
+KOR,226,special city,1,17,17
+KOR,227,metropolitan city,6,,
+KOR,329,province,7,,
+KOR,452,special self-governing province,2,,
+KOR,453,special self-governing city,1,,
+KWT,119,governorate,6,6,6
+KAZ,330,region,17,14,16
+KAZ,437,city,3,,
+LAO,273,prefecture,1,18,17
+LAO,285,province,17,,
+LBN,208,governorate,8,8,6
+LCA,376,district,10,10,11
+LIE,331,commune,11,11,11
+LKA,286,province,9,25,25
+LKA,421,district,25,,
+LBR,377,county,15,15,15
+LSO,209,district,10,10,10
+LTU,210,county,10,10,10
+LTU,454,city municipality,7,,
+LTU,455,district municipality,44,,
+LTU,456,municipality,9,,
+LUX,462,canton,12,3,3
+LVA,211,municipality,36,5,119
+LVA,248,state city,7,,
+LBY,332,popularate,22,22,22
+MAR,161,prefecture,13,15,16
+MAR,249,province,62,,
+MAR,287,region,12,,
+MCO,212,quarter,17,1,1
+MDA,120,district,32,37,40
+MDA,148,autonomous territorial unit,1,,
+MDA,222,territorial unit,1,,
+MDA,234,city,3,,
+MNE,121,municipality,25,21,21
+MDG,213,province,6,6,22
+MHL,162,chain (of islands),2,1,2
+MHL,378,municipality,24,,
+MKD,288,municipality,80,85,84
+MLI,132,region,10,11,9
+MLI,436,district,1,,
+MMR,163,region,7,15,14
+MMR,264,state,7,,
+MMR,457,union territory,1,,
+MNG,333,province,21,22,22
+MNG,360,capital city,1,,
+MRT,289,region,15,13,13
+MLT,280,local council,68,5,68
+MUS,238,district,9,12,16
+MUS,340,dependency,3,,
+MDV,326,administrative atoll,19,1,21
+MDV,476,city,2,,
+MWI,135,region,3,28,28
+MWI,367,district,28,,
+MEX,239,state,31,32,33
+MEX,341,federal entity,1,,
+MYS,147,federal territory,3,16,16
+MYS,156,state,13,,
+MOZ,131,city,1,11,11
+MOZ,281,province,10,,
+NAM,157,region,14,13,13
+NER,110,urban community,1,8,8
+NER,282,region,7,,
+NGA,200,state,36,37,37
+NGA,435,capital territory,1,,
+NIC,111,department,15,18,17
+NIC,310,autonomous region,2,,
+NLD,387,province,12,14,15
+NLD,398,country,3,,
+NLD,413,special municipality,3,,
+NOR,257,county,11,19,21
+NOR,345,arctic region,2,,
+NPL,477,province,7,5,14
+NRU,172,district,14,14,14
+NZL,388,region,16,19,24
+NZL,440,special island authority,1,,
+OMN,399,governorate,11,11,11
+PAN,232,indigenous region,4,13,12
+PAN,389,province,10,,
+PER,127,region,25,26,26
+PER,190,municipality,1,,
+PNG,137,district,1,22,20
+PNG,173,province,20,,
+PNG,186,autonomous region,1,,
+PHL,128,region,17,81,118
+PHL,260,province,82,,
+PAK,138,Pakistan administered area,2,7,8
+PAK,191,federal capital territory,1,,
+PAK,261,province,4,,
+POL,217,voivodship,16,16,16
+PSE,349,governorate,16,2,
+PRT,270,autonomous region,2,20,20
+PRT,304,district,18,,
+PLW,129,state,16,16,16
+PRY,295,department,17,18,18
+PRY,350,capital,1,,
+QAT,179,municipality,8,7,7
+ROU,296,department,41,42,42
+ROU,308,municipality,1,,
+SRB,224,autonomous province,2,25,25
+SRB,271,city,1,,
+SRB,337,district,29,,
+RUS,290,administrative region,46,83,86
+RUS,309,autonomous district,4,,
+RUS,311,autonomous city,2,,
+RUS,355,autonomous region,1,,
+RUS,396,administrative territory,9,,
+RUS,433,republic,21,,
+RWA,267,city,1,5,5
+RWA,343,province,4,,
+SAU,214,region,13,,13
+SLB,122,province,9,10,10
+SLB,229,capital territory,1,,
+SYC,164,district,27,26,26
+SDN,395,state,18,18,17
+SWE,422,county,21,21,21
+SGP,215,district,5,5,5
+SHN,230,geographical entity,3,3,3
+SVN,423,municipality,200,12,193
+SVN,497,urban municipality,12,,
+SVK,250,region,8,8,8
+SLE,359,area,1,4,4
+SLE,424,province,4,,
+SMR,165,municipality,9,9,9
+SEN,175,region,14,14,14
+SOM,303,region,18,18,13
+SUR,123,district,10,10,10
+SSD,306,state,10,12,
+STP,133,autonomous region,1,2,2
+STP,487,district,6,,
+SLV,379,department,14,14,14
+SYR,251,province,14,14,15
+SWZ,166,region,4,4,4
+TCD,380,province,23,23,22
+TGO,252,region,5,5,5
+THA,134,metropolitan administration,1,77,77
+THA,291,province,76,,
+THA,348,special administrative city,1,,
+TJK,145,region,2,5,5
+TJK,315,autonomous region,1,,
+TJK,458,capital territory,1,,
+TJK,472,districts under republic administration,1,,
+TLS,253,municipality,12,13,13
+TLS,478,special administrative region,1,,
+TKM,292,city,1,6,5
+TKM,425,region,5,,
+TUN,124,governorate,24,24,23
+TON,381,division,5,5,5
+TUR,426,province,81,81,81
+TTO,167,borough,3,15,16
+TTO,176,region,9,,
+TTO,463,ward,1,,
+TTO,488,city,2,,
+TUV,177,island council,7,9,1
+TUV,307,town council,1,,
+TWN,136,city,3,7,21
+TWN,223,special municipality,6,,
+TWN,344,county,13,,
+TZA,427,region,31,30,30
+UKR,382,city,2,27,25
+UKR,383,region,24,,
+UKR,400,republic,1,,
+UGA,254,geographical region,4,58,112
+UGA,334,district,134,,
+UGA,459,city,1,,
+UMI,255,"islands, groups of islands",9,9,8
+USA,141,district,1,51,51
+USA,265,outlying area,6,,
+USA,335,state,50,,
+URY,125,department,19,19,19
+UZB,216,region,12,14,14
+UZB,293,republic,1,,
+UZB,445,city,1,,
+VCT,384,parish,6,6,6
+VEN,256,state,23,25,26
+VEN,312,federal dependency,1,,
+VEN,385,capital district,1,,
+VNM,126,province,58,63,63
+VNM,294,municipality,5,,
+VUT,170,province,6,6,6
+WLF,464,administrative precinct,3,3,3
+WSM,171,district,11,11,11
+YEM,142,municipality,1,21,21
+YEM,386,governorate,21,,
+ZAF,428,province,9,9,9
+ZMB,168,province,10,10,10
+ZWE,169,province,10,10,10

@@ -1,0 +1,784 @@
+{% extends "base.html" %}
+{% from 'codeblock.html' import codeblock %}
+
+{% block what %}
+    <br>
+    <h2>Was ist der Geoservice?</h2>
+    <hr>
+    <p>Entdecken Sie den Geo-Service für präzise und vielseitige Geoinformationen! Unser Dienst stellt Geoinformationen 
+	für Drittapplikationen bereit. Das bedeutet, dass Sie unseren Geo-Service mit nahezu jeder Datengrundlage nutzen können, einschließlich der 
+	derzeit unterstützten GADM- und Natural Earth-Datensätze. Der Geo-Service bietet Ihnen die Möglichkeit, Ländergrenzen und andere 
+	wichtige Geometrien auf verschiedenen administrativen Ebenen zu erhalten. Diese Daten können in verschiedenen Simplifizierungen als Kacheln 
+	bereitgestellt werden. 
+    </p>
+{% endblock %}
+
+{% block usage %}
+    <h2>Nutzung der Clientkomponente</h2>
+    <hr>
+    <div id="inlinecode">
+        <ul>
+            <li>TBD</li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block example %}
+    <h2>How To </h2>
+    <hr>
+{% endblock %}
+
+{% block example_react %}
+    <h2>Anbinden des Geoservice mit React und Leaflet</h2>
+    <ul>
+        <div id="inlinecode">
+            <br>In diesem Tutorial erfahren Sie, wie Sie den Geo-Service in einem React-Projekt mit Leaflet integrieren können. 
+			Folgen Sie den unten stehenden Schritten, um ein exemplarisches Projekt zu erstellen und den Geo-Service zu nutzen.
+    <br><br>
+                   <h2>Schritt 1: Initialisierung des Vite-Projekts</h2>
+    <ol>
+        <li>
+            <h3>Vite-Projekt erstellen</h3>
+            <p>Führen Sie den folgenden Befehl aus, um ein neues Vite-Projekt zu erstellen:</p>
+            <div class="code-block">
+                <pre><code>npm create vite@latest</code></pre>
+                <button class="copy-button" onclick="copyCode('npm create vite@latest')">Code kopieren</button>
+            </div>
+        </li>
+        <li>
+            <h3>Projektdetails angeben</h3>
+            <p>Geben Sie den Projektnamen, das gewünschte Framework (React) und die JavaScript-Variante (TypeScript oder JavaScript) an, wenn Sie dazu aufgefordert werden.</p>
+        </li>
+        <li>
+            <h3>Abhängigkeiten installieren</h3>
+            <p>Wechseln Sie in das Projektverzeichnis und installieren Sie die Abhängigkeiten:</p>
+            <div class="code-block">
+                <pre><code>cd IhrProjektname<br>npm install</code></pre>
+                <button class="copy-button" onclick="copyCode('cd IhrProjektname\nnpm install')">Code kopieren</button>
+            </div>
+        </li>
+        <li>
+            <h3>Projekt testen</h3>
+            <p>Starten Sie das Projekt mit folgendem Befehl und prüfen Sie, ob es korrekt aufgesetzt wurde:</p>
+            <div class="code-block">
+                <pre><code>npm run dev</code></pre>
+                <button class="copy-button" onclick="copyCode('npm run dev')">Code kopieren</button>
+            </div>
+            <p>Wenn die Meldung <code>VITE vx.y.zz ready in xyz ms</code> erscheint und das Projekt unter der angegebenen lokalen Adresse erreichbar ist, ist das Projekt korrekt eingerichtet.</p>
+        </li>
+    </ol>
+
+    <h2>Schritt 2: Integration des Geo-Service</h2>
+    <p>Im Projektordner können Sie nun die Geo-Service-Funktionalität zusammen mit der Kartenlogik in der Datei <code>src/App.tsx</code> einbinden. Ein Beispielcode finden Sie im GitLab-Repository.</p>
+    <div class="code-block">
+        <pre><code class="language-javascript">
+import React from 'react';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import { GeoServiceTiles } from 'path-to-geoservice-tiles'; // Importieren Sie die GeoService-Komponente
+
+const App = () => {
+  return (
+    &lt;MapContainer center={[51.505, -0.09]} zoom={13} style={{ '{{' }} height: "100vh", width: "100%" {{ '}}' }}>
+      &lt;TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution="&copy; OpenStreetMap contributors"
+      />
+      &lt;GeoServiceTiles />
+      &lt;Marker position={[51.505, -0.09]} />
+    &lt;/MapContainer>
+  );
+}
+
+export default App;
+        </code></pre>
+        <button class="copy-button" onclick="copyCode(`import React from 'react';\nimport { MapContainer, TileLayer, Marker } from 'react-leaflet';\nimport 'leaflet/dist/leaflet.css';\nimport { GeoServiceTiles } from 'path-to-geoservice-tiles'; // Importieren Sie die GeoService-Komponente\n\nconst App = () => {\n  return (\n    &lt;MapContainer center={[51.505, -0.09]} zoom={13} style={{ '{{' }} height: '100vh', width: '100%' {{ '}}' }}>\n      &lt;TileLayer\n        url=&quot;https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&quot;\n        attribution=&quot;&copy; OpenStreetMap contributors&quot;\n      />\n      &lt;GeoServiceTiles />\n      &lt;Marker position={[51.505, -0.09]} />\n    &lt;/MapContainer>\n  );\n}\n\nexport default App;`)">Code kopieren</button>
+    </div>
+
+    <h2>Schritt 3: Code-Struktur verstehen</h2>
+    <p>Der obige Code ist grob in drei Segmente unterteilt:</p>
+    <ol>
+        <li>
+            <h3>Import der Abhängigkeiten</h3>
+            <ul>
+                <li>React und Leaflet-Bibliotheken sowie die spezifische GeoService-Komponente.</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Logik zur Einfärbung der Länder in der Karte</h3>
+            <ul>
+                <li>Diese Logik würde in der GeoServiceTiles-Komponente implementiert, die die Ländergrenzen und andere Geometrien einfärbt.</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Definition der Kartenparameter</h3>
+            <ul>
+                <li>Hier wird der <code>MapContainer</code> definiert, der die Karte und deren Parameter wie Zoomstufe und Initialposition enthält.</li>
+                <li>Der <code>Marker</code> zeigt eine spezifische Position an, und die <code>GeoServiceTiles</code>-Komponente bindet die Geodaten des Geo-Service ein.</li>
+            </ul>
+        </li>
+    </ol>
+        </div>
+        <p><b><br></br>tbc</b></p>
+    </ul>
+{% endblock %}
+
+{% block example_svelte %}
+      <h1>Beispiel Geoservice mit Svelte und OpenLayers</h1>
+    <p>In diesem Tutorial erfahren Sie, wie Sie den Geo-Service in einer Svelte-App mit OpenLayers integrieren können. Folgen Sie den unten stehenden Schritten, um ein exemplarisches Projekt zu erstellen und den Geo-Service zu nutzen.</p>
+
+    <h2>Schritt 1: Initialisierung des Svelte-Projekts</h2>
+    <ol>
+        <li>
+            <h3>Svelte-App erstellen</h3>
+            <p>Erstellen Sie eine neue Svelte-App mit dem folgenden Befehl:</p>
+            <div class="code-block">
+                <pre><code>npx degit sveltejs/template svelte-app</code></pre>
+                <button class="copy-button" onclick="copyCode('npx degit sveltejs/template svelte-app')">Code kopieren</button>
+            </div>
+        </li>
+        <li>
+            <h3>Projektdetails angeben</h3>
+            <p>Geben Sie den Projektnamen und die gewünschten Optionen an, wenn Sie dazu aufgefordert werden.</p>
+        </li>
+        <li>
+            <h3>Abhängigkeiten installieren</h3>
+            <p>Wechseln Sie in das Projektverzeichnis und installieren Sie die Abhängigkeiten:</p>
+            <div class="code-block">
+                <pre><code>cd svelte-app<br>npm install</code></pre>
+                <button class="copy-button" onclick="copyCode('cd svelte-app\nnpm install')">Code kopieren</button>
+            </div>
+        </li>
+        <li>
+            <h3>Projekt testen</h3>
+            <p>Starten Sie das Projekt mit folgendem Befehl und prüfen Sie, ob es korrekt aufgesetzt wurde:</p>
+            <div class="code-block">
+                <pre><code>npm run dev</code></pre>
+                <button class="copy-button" onclick="copyCode('npm run dev')">Code kopieren</button>
+            </div>
+            <p>Wenn die Meldung <code>Svelte application is running</code> erscheint und das Projekt unter der angegebenen lokalen Adresse erreichbar ist, ist das Projekt korrekt eingerichtet.</p>
+        </li>
+    </ol>
+
+   <h3>Schritt 2: Integration des Geo-Service</h3>
+{% endblock %}
+
+{% block endpoint %}
+    <div id="inlinecode">
+        <h2>API-Endpunkte</h2>
+        <hr>
+        <p>
+            Die Endpunkte des Geoservice sind unter <code>http://localhost:5000/apidocs</code> (siehe auch Service-
+            Endpunkt) erreichbar. Geodaten können mit unten
+            angegebenen REST-Schnittstellen bezogen werden. <br>
+        </p>
+
+        <h3>Endpunkt <code id="apigeo">/api/geo/</code></h3>
+        <p>
+            Geometrien der Datensätze <code>GADM</code>, <code>Natural Earth</code> und <code>Konsulate</code>
+            werden über diesen Endpunkt als JSON-Format bereitgestellt.
+        </p>
+        <ul>
+            <li>
+                <code id="aearial_code">filter_aerial_code</code> (Optional): Die Rückgabe wird entsprechend der angegebenen Länder
+                gefiltert. Die Auswahl erfolgt durch ein dreistelliges Landeskürzel je Eingabefeld via
+                <a href="https://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste">ISO-3166-1 ALPHA-3</a>.
+            </li>
+            <li>
+                <code>filter_aerial_level</code> (Optional): Gibt an, welches administrative Level (ADM) von
+                <a href="https://gadm.org/data.html">GADM</a> oder
+                <a href="https://www.naturalearthdata.com/downloads/">Natural Earth</a> bezogen werden soll. Der
+                Geoservice unterstützt aktuell Hierarchien von <code>"ADM0"</code> bis <code>"ADM1"</code>.
+            </li>
+            <li>
+                <code id="boundingbox">filter_boundingbox_southwest_lat</code>: Y-Koordinate des ersten Stützpunktes der Bounding-Box.
+                Diese wird als räumlicher Filter zur Anfrage der Datenbank verwendet. Der Wertebereich liegt zwischen
+                <code>-90</code> und <code>90</code>.
+            </li>
+            <li>
+                <code>filter_boundingbox_southwest_lng</code>: X-Koordinate des ersten Stützpunktes der Bounding-Box.
+                Diese wird als räumlicher Filter zur Anfrage der Datenbank verwendet. Der Wertbereich liegt zwischen
+                <code>-180</code> und <code>180</code>.
+            </li>
+            <li>
+                <code>filter_boundingbox_northeast_lat</code>: Y-Koordinate des zweiten Stützpunktes der Bounding-Box.
+                Diese wird als räumlicher Filter zur Anfrage der Datenbank verwendet. Der Wertebereich liegt zwischen
+                <code>-90</code> und <code>90</code>.
+            </li>
+            <li>
+                <code>filter_boundingbox_northeast_lng</code>: X-Koordinate des zweiten Stützpunktes der Bounding-Box.
+                Diese wird als räumlicher Filter zur Anfrage der Datenbank verwendet. Der Wertbereich liegt zwischen
+                <code>-180</code> und <code>180</code>.
+            </li>
+            <li>
+                <code id="zoomlvl">zoom_level</code> (Optional): Bestimmt in welcher Detailfülle die Geodaten (Anzahl
+                der Stützstellen pro Geometrie) zurückgegeben werden. Je höher das <code>zoom_level</code> (je näher
+                herangezoomt), desto genauer die Geometrien. Der Wertebereich liegt zwischen <code>0</code> und
+                <code>10</code>.
+            </li>
+            <li>
+                <code>source</code> (Optional): Gibt an, welche Geodatenquelle zurückgegeben wird. Auswählbar sind
+                <code>GADM</code>, <code>Natural Earth</code>. Vorselektiert ist GADM.
+            </li>
+            <li>
+                <code>feature_geometries</code> (Optional): Gibt eine Liste an Polygonen oder Multi-Polygonen in
+                Abhängigkeit zu den gewählten Parametern im Endpunkt zurück. Ist Parameter
+                <code>filter_aerial_level</code> nicht angegeben, wird ADM0 selektiert. Ist Parameter
+                <code>filter_aerial_code</code> nicht angegeben, werden die Regionen zurückgegeben, die innerhalb der
+                Bounding-Box liegenden. Die Bounding-Box berechnet sich durch die Werte der vier Parameter
+                <code>filter_boundingbox_*</code>. <br><mark>Achtung</mark>: ADM0- und ADM1-Geometrien werden
+                <b>immer</b> an den Rändern der Bounding-Box abgeschnitten.
+            </li>
+            <li>
+                <code>feature_population</code> (Optional): Fügt zurückgegebenen ADM0- oder ADM1-Polygonen den
+                Parameter "population" hinzu, wenn <code>feature_population</code> und <code>feature_geometries</code>
+                auf <code>true</code> gesetzt werden. Die Werte entstammen den UN Bevölkerungsstatistiken aus Endpunkt
+                <a href=#apipop>/api/geo/population/</a>.
+            </li>
+            <li>
+                <code>feature_consulates</code> (Optional): Gibt eine Liste deutscher Konsulate in Abhängigkeit zu den
+                gefilterten Ländern der Welt als Punktgeometrien zurück. Jeder Datenpunkt verweist auf eine
+                Konsulats-Homepage.
+            </li>
+            <!--
+            <li>
+                <code>feature_cities</code>:
+            </li>
+            -->
+        </ul>
+
+        <h3>Endpunkt <code>/api/geo/svg/</code></h3>
+        <p>
+            Gibt die ADM0- oder ADM1-Geometrien der Datensätze <code>GADM</code> oder <code>Natural Earth</code> im SVG
+            Format wider. Auch können die Punktgeometrien der Konsulate hierüber visualisiert werden.
+        </p>
+        <ul>
+            <li>
+                <code>filter_aerial_code</code> (Optional): Siehe auch Filterbeschreibung unter
+                <a href=#aearial_code>/api/geo/</a>. Ist der Filter nicht gesetzt, werden alle Länder, die in die
+                Bounding-Box fallen, ausgewählt.
+            </li>
+            <li>
+                <code>filter_aerial_level</code> (Optional): Gibt an, ob Geometrien aus ADM0 oder ADM1 zur
+                Visualisierung verwendet werden. Ist der Filter nicht gesetzt, wird ADM0 genutzt.
+            </li>
+            <li>
+                <code>filter_boundingbox_*</code>: Siehe Filterbeschreibung unter <a href=#boundingbox>/api/geo/</a>.
+            </li>
+        </ul>
+        <h3>Endpunkt <code>/api/geo/vg250/</code></h3>
+        <ul>
+            <li>
+                <code>agg_level</code>: Die administrativen Ebenen der Bundesrepublik Deutschland. Voreingestellt ist
+                Verwaltungsgemeinschaft. Zur Auswahl stehen: Staat, Land, Regierungsbezirk, Kreis,
+                Verwaltungsgemeinschaft, Gemeinde.
+            </li>
+            <li>
+                <code>zoom_level</code>: Siehe Filterbeschreibung unter <code><a href=#zoomlvl>/api/geo/</a></code>.
+            </li>
+            <li>
+                <code>filter_level</code> (Optional): Zur Auswahl stehen
+                <code>"land"</code>,
+                <code>"regierungsbezirk"</code>,
+                <code>"kreis"</code>,
+                <code>"verwaltungsgemeinschaft"</code>,
+                <code>"gemeinde"</code>,
+                <code>"nuts1"</code>,
+                <code>"nuts2"</code>,
+                <code>"nuts3"</code>. Wenn gewählt, muss auch <code>filter_names</code> oder <code>filter_codes</code>
+                definiert werden.
+            </li>
+            <li>
+                <code>filter_names</code> (Optional): Name des Verwaltungsgebietes von Interesse, in Abhängigkeit zum
+                gewählten <code>filter_level</code>.
+            </li>
+            <li>
+                <code>filter_codes</code> (Optional): Schlüssel des Verwaltungsgebietes von Interesse, in Abhängigkeit
+                zum gewählten <code>filter_level</code>.
+            </li>
+            <li>
+                <code>filter_boundingbox_*</code> (Optional): Siehe Filterbeschreibung in
+                <code><a href=#boundingbox>/api/geo/</a></code>. <br> Außerdem: Soll die Abfrage über die Bounding-Box
+                erfolgen, so müssen alle vier Koordinaten definiert werden.
+            </li>
+        </ul>
+        Für weiterführende Informationen zum Datensatz siehe Eintrag <a href=#vg250_info>VG250</a> in Kapitel
+        "Dokumentation".
+
+        <h3 id="apipop">Endpunkt <code>/api/geo/population/</code></h3>
+        <p>
+            Listet die Einwohnerzahl der Länder über den zeitlichen Verlauf im Format JSON. Als Quelle dient
+            United Nations, Department of Economic and Social Affairs, Population Division (2024).
+        </p>
+        <ul>
+            <li>
+                <code>filter_aerial_code</code> (Optional): Siehe auch Filterbeschreibung unter
+                <a href=#aearial_code>/api/geo/</a>. Ist der Filter nicht gesetzt, werden alle Länder ausgewählt.
+            </li>
+            <li>
+                <code>years</code> (Optional): Hierüber wird die Rückgabe auf ein bestimmtes Jahr gesetzt. Auch können
+                weitere Jahr-Elemente hinzugefügt werden, um mehrere Jahre zurückzuerhalten.
+            </li>
+            <li>
+                <code>years_from</code> (Optional): Beginnendes Jahr, um eine Liste von aufeinanderfolgenden Jahren und
+                deren Bevölkerungszahlen zu erhalten. Wird dieser Parameter nicht gesetzt, beginnt die Auflistung mit
+                dem ältesten Jahr des Datensatzes.
+            </li>
+            <li>
+                <code>years_to</code> (Optional): Endendes Jahr, um eine Liste von aufeinanderfolgenden Jahren und
+                deren Bevölkerungszahlen zu erhalten. Wird dieser Parameter nicht gesetzt, endet die Auflistung mit dem
+                jüngsten Jahr des Datensatzes.
+            </li>
+            <li>
+                <code>source</code>: Gibt die Datenquelle an. <code>WPP2022</code> der UN Bevölkerungsstatistik ist
+                vorausgewählt.
+            </li>
+        </ul>
+
+        <h3>Endpunkt <code>/api/geo/metadata/</code></h3>
+        <p>
+            Es werden Metadaten der Datensätze <code>Natural Earth</code>, <code>GADM</code>, <code>Konsulate</code>,
+            <code>Wahlkreise</code> und <code>population</code> (UN Bevölkerungsstatistiken) im JSON-Format
+            zurückgegeben.
+        </p>
+        <ul>
+            <li>
+                <code>source</code> (Optional): Filter, für welchen Datensatz die Metadaten zurückgegeben werden sollen.
+                Standardmäßig werden alle Datensätze ausgewählt.
+            </li>
+            <li>
+                <code>available_sources</code> (Optional): Listet alle verfügbaren Datensätze des Geoservice, wenn
+                <code>true</code> ausgewählt ist.
+            </li>
+            <li>
+                <code>filter_boundingbox_*</code> (Optional): Siehe Filterbeschreibung in
+                <code><a href=#boundingbox>/api/geo/</a></code>. <br> Außerdem: Soll die Abfrage über die Bounding-Box
+                erfolgen, so müssen alle vier Koordinaten definiert werden.
+            </li>
+        </ul>
+
+    </div>
+{% endblock %}
+
+{% block documentation %}
+    <h2>Dokumentation</h2>
+    <hr>
+    <h3>Anbinden von Daten in den Geoservice</h3>
+    <p>
+        Die ETL-Strecke des Geoservice kann durch verschiedene Command Line Interface (CLI) - Befehle getriggert werden.
+        Grundsätzlich kann nach den Prozessen <code>fetch</code> und <code>update</code> unterscheiden. Beiden
+        Operationen ist gemein, dass die Datenquelle(n) aus einem Datalake, wie beispielsweise der MinIO extrahiert und
+        lokal im Projektverzeichnis <code>geoservice/resources/Datenquelle</code>. Während der Prozess
+        <code>fetch</code> eine Datenquelle lediglich lokal verfügbar macht, wird mit Hilfe von <code>update</code> die
+        gesamte ETL-Strecke ausgelöst, die Daten werden also extrahiert, transformiert und in der Geoservice-Datenbank
+        persistiert.
+        <br><br>
+        <mark>Beschreiben der Möglichkeit von default und custom <code>extract/transform/load</code></mark><br>
+        Nachfolgend werden die CLI-Befehle zur ETL-Strecke beschrieben.
+    </p>
+    <ul>
+        <li>
+            CLI Datenbank-Upgrade
+        </li>
+        <li>
+            Prozess des CLI Datasource Update/Fetch
+            <ul>
+                <li>
+                    Ergänzend: Für jede Datasource, die an den Geoservice angebunden werden soll,
+                    muss ein eigener remote_path zur Datenquelle angegeben werden.
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div>
+        Grundsätzlich kann mithilfe von
+
+        <div class="code-block">
+            <pre><code>uv run dev.py flask etl update --help</code></pre>
+            <button class="copy-button" onclick="copyCode('python dev.py flask etl update --help')">Code kopieren</button>
+        </div>
+        gelistet werden, welche Datensätze für ein <code>fetch</code> oder <code>update</code> Prozess zur Verfügung
+        stehen. Es muss darauf geachtet werden, dass der Parameter <code>GEOSERVICE_ETL_REMOTE_SOURCES</code> in der
+        env.json um die Datensource ergänzt wurde, die Prozessiert werden soll.
+    </div>
+    <mark>tbc</mark>
+    <h3>
+        Beschreibung der ETL-Strecken
+    </h3>
+    <mark>Beschreibung für alle ETL-Strecken muss aktualisiert werden</mark>
+    <h4>
+        <code>python dev.py etl update -s gadm</code>
+    </h4>
+
+    <ul>
+        Befehl zur Befüllung der Datenbank um <a href="https://gadm.org/">GADM</a> (<b>G</b>lobal <b>ADM</b>inistrative Areas) oder
+        <a href="https://www.naturalearthdata.com/downloads/">Natural Earth</a> Polygon-Geometrien der Länder und Regionen
+        der Erde. Der Geoservice unterstützt derzeit die
+        <a href="https://learn.opengeoedu.de/opendata/vorlesung/open-government-data/verwaltungsdaten-in-dach-und-eu/adm_de">
+            <b>ADM</b>inistrativen Stufen</a> ADM0 bis ADM1. <br>
+        Bei jedem ETL-Vorgang wird entsprechend der gewählten Parameter zunächst ein Datensatz der ADM-Stufe 0
+        (Staatenebene) oder 1 (Länderebene) aus Natural Earth oder GADM extrahiert. Der Datenextrakt erfolgt aus
+        <code>MinIO</code> heraus und wird im Projektordner unter <code>/resources/datasource/</code> persistiert.
+        Liegen die Quelldaten bereits im genannten Verzeichnis, greift die ETL-Strecke anstatt auf MinIO auf den
+        lokalen Speicher zu. Im weiteren Verlauf werden die extrahierten Geodaten, spezifisch zur gewählten Quelle,
+        harmonisiert und im letzten Prozessierschritt mittels <a href="https://www.sqlalchemy.org/">SQLAlchemy</a>
+        (einem Open-Source SQL Toolkit für Python) in die PostGIS-Datenbank geladen.
+        <table>
+            <tr>
+                <th>CLI-Befehl</th>
+                <th>Parameter</th>
+                <th>Beschreibung</th>
+            </tr>
+            <tr VALIGN=TOP>
+                <td style="width:15%"><code>geo-etl</code></td>
+                <td><code>source</code> (string)</td>
+                <td style="width:60%">Gibt an, welche Datenquelle extrahiert werden soll.<br> Zur Auswahl stehen
+                    <code>"gadm"</code> oder <code>"naturalearth"</code>.</td>
+            </tr>
+            <tr VALIGN=TOP>
+                <td></td>
+                <td><code>simplification_level</code> (integer)</td>
+                <td>Gibt den Grad der Simplifizierung der Regionsgeometrien an, bevor diese in die Datenbank geladen
+                    werden. Zur Auswahl steht eine Spanne von <code>0 - 10</code>. Dabei gibt <code>0</code> keine
+                    Simplifizierung - also die native Gesamtzahl der Stützpunkte einer Geometrie -
+                    und <code>10</code> den maximalen Simplifizierungsgrad an. <br><b>Info Natural Earth:</b>
+                    Geometrien für Natural Earth werden mithilfe des
+                    <a href="https://github.com/mbloch/mapshaper/wiki/Command-Reference#-simplify">
+                        MapShaper -simplify Algorithmus</a> simplifiziert. Jeder Simplifizierungsgrad
+                    besitzt eine definierte Distanzeinheit über diese MapShaper ausgehend vom Geometriebasispunkt
+                    vereinfacht. D. h. weitere Stützpunkte einer Geometrie, die in diese Distanz ausgehend vom Basispunkt
+                    fallen, werden entfernt. Insgesamt wird damit die Gesamtmenge der Stützpunkte einer Geometrie
+                    reduziert. Pro Grad der Simplifizierung wird folgende Distanz angelegt (<code>{Simplifizierung:
+                        Distanz}</code>): <code>{0: 0, 1: 100, 2: 500, 3: 1000, 4: 3000, 5: 6000, 6: 10000,
+                        7: 20000, 8: 40000, 9: 50000, 10: 60000}</code>.
+                    <br><b>Info GADM</b>: Geometrien von GADM werden mittels der PostGIS-Funktion
+                    <a href="https://postgis.net/docs/ST_Simplify.html"><code>ST_Simplify</code></a> simplifiziert. Jedem Grad der Simplifizierung ist ein Toleranzwert zugeordnet: <code>
+                        {0: 0, 1: 0.00001, 2: 0.00005, 3: 0.0001, 4: 0.0005, 5: 0.001, 6: 0.005, 7: 0.01, 8: 0.05,
+                        9: 0.1, 10: 1}</code>.
+                </td>
+            </tr>
+            <tr VALIGN=TOP>
+                <td></td>
+                <td><code>adm_level</code> (string)</td>
+                <td>Definiert, welche ADM-Stufen von GADM oder Natural Earth in die Datenbank geschrieben werden sollen.
+                    Zur Wahl stehen <code>"adm0"</code> oder <code>"adm1"</code>.</td>
+            </tr>
+        </table>
+        Beispiel ETL-Befehl zum Extrahieren und Befüllen der Datenbank mit dem Datensatz GADM in der Stufe ADM0 mit
+        simplifizierten Geometrien:
+        <div class="code-block">
+            <pre><code>python dev.py flask geo-etl gadm 5 adm0</code></pre>
+            <button class="copy-button" onclick="copyCode('python dev.py flask geo-etl gadm 5 adm0')">Code kopieren</button>
+        </div>
+    </ul>
+
+    <h4><code>geo-etl-complete</code></h4>
+
+    <ul>
+        Befüllt, ähnlich wie <code>geo-etl</code>, die Datenbank mit den Regionsgeometrien von Natural Earth oder GADM und
+        gewählten administrativen Ebenen, jedoch automatisch für alle Simplifizierungsgrade. In der PostGIS wird eine
+        Datenbanktabelle namens <code>"adm0"</code> oder <code>"adm1"</code> angelegt, in Abhängigkeit vom gewählten
+        Funktionsparameter <code>adm_level</code>. Ist bereits eine ADM0- oder ADM1 Tabelle vorhanden, so wird diese um
+        etwaige neue Einträge ergänzt.
+        <table>
+            <tr>
+                <th>CLI-Befehl</th>
+                <th>Parameter</th>
+                <th>Beschreibung</th>
+            </tr>
+            <tr VALIGN=TOP>
+                <td style="width:20%"><code>geo-etl-complete</code></td>
+                <td><code>source</code> (string)</td>
+                <td style="width:60%">Gibt an, welche Datenquelle extrahiert werden soll.<br> Zur Auswahl stehen
+                    <code>"gadm"</code> oder <code>"naturalearth"</code>.</td>
+            </tr>
+            <tr VALIGN=TOP>
+                <td></td>
+                <td><code>adm_level</code> (string)</td>
+                <td>Definiert, welche ADM-Stufen von GADM oder Natural Earth in die Datenbank geschrieben werden sollen.
+                    Zur Wahl stehen <code>"adm0"</code> oder <code>"adm1"</code>.</td>
+            </tr>
+        </table>
+        Beispiel ETL-Befehl zum Extrahieren und Befüllen der Datenbank mit dem Datensatz Natural Earth in der Stufe ADM1
+        für alle Simplifizierungsgrade (<code>0-10</code>):
+        <div class="code-block">
+            <pre><code>python dev.py flask geo-etl-complete naturalearth adm1</code></pre>
+            <button class="copy-button" onclick="copyCode('python dev.py flask geo-etl-complete naturalearth adm1')">Code kopieren</button>
+        </div>
+    </ul>
+
+    <h4><code>geo-etl-consulates</code></h4>
+
+    <ul>
+        Befüllt die Datenbank mit deutschen Vertretungen in den Ländern Welt. Dabei wird
+        die neue Datenbank-Tabelle <codes>"consulates"</codes> generiert. Als Datenquelle dienen Informationen, welche
+        das Auswärtige Amt zur Verfügung gestellt hat. Dieser Datensatz enthält neben den Punktgeometrien, den Länder-
+        und Konsulatscodes auch die URL zur Webpräsenz der jeweiligen Konsulate.
+        <table>
+            <tr>
+                <th>CLI-Befehl</th>
+                <th>Parameter</th>
+                <th>Beschreibung</th>
+            </tr>
+            <tr VALIGN=TOP>
+                <td style="width:25%"><code>geo-etl-consulates</code></td>
+                <td style="text-align: center"> - </td>
+                <td style="width:60%; text-align: center"> - </td>
+            </tr>
+        </table>
+        <div class="code-block">
+            <pre><code>python dev.py flask geo-etl-consulates</code></pre>
+            <button class="copy-button" onclick="copyCode('python dev.py flask geo-etl-consulates')">Code kopieren</button>
+        </div>
+    </ul>
+
+    <h4><code>geo-etl-wahlkreise</code></h4>
+
+    <ul>
+        Lädt die Wahlkreise Deutschlands in die Datenbank. Hierbei handelt es sich um Polygon-Geometrien, welche
+        <mark><i>Kind-Elemente</i></mark> der ADM1-Geometrien darstellen und in der Detailstufe auf Höhe von ADM2 bis
+        ADM3 rangieren. Die Wahlkreisdaten sind aber weder als ADM2 noch ADM3 anzusehen, sie stellen vielmehr eine
+        gesonderte Hierarchiestufe dar. Als Datengrundlage dient die
+        <a href="https://www.bundeswahlleiterin.de/bundestagswahlen/2025/wahlkreiseinteilung/downloads.html">
+            Geometrie der Wahlkreise in geografischen Koordinaten (WGS84)</a> herausgegeben durch das Statistische
+        Bundesamt sowie dem Bundesamt für Kartographie und Geodesie für die Wahl zum 21. Deutschen Bundestag.
+        <table>
+            <tr>
+                <th>CLI-Befehl</th>
+                <th>Parameter</th>
+                <th>Beschreibung</th>
+            </tr>
+            <tr VALIGN=TOP>
+                <td style="width:25%"><code>geo-etl-wahlkreise</code></td>
+                <td><code>country</code>(string)</td>
+                <td style="width:60%">Definiert für welches Land die Wahlkreise in die Datenbank
+                    geladen werden sollen. Die Angabe erfolgt als
+                    <a href="https://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste#A">ISO 3 ALPHA-3</a> Code. Aktuell
+                    wird nur Deutschland unterstützt.</td>
+            </tr>
+        </table>
+        <div class="code-block">
+            <pre><code>python dev.py flask geo-etl-wahlkreise deu</code></pre>
+            <button class="copy-button" onclick="copyCode('python dev.py flask geo-etl-wahlkreise deu')">Code kopieren</button>
+        </div>
+    </ul>
+
+    <h4><code>geo-etl-population</code></h4>
+    <mark>tbc</mark>
+
+    <h4><code>geo-etl-settling</code></h4>
+    <mark>tbc</mark>
+    <h4>
+        <code>hillshade</code>
+    </h4>
+    <h4 id="vg250_info">
+        <code>VG250</code>
+    </h4>
+    <p>
+        Dieser Datensatz umfasst die administrativen Verwaltungseinheiten der Bundesrepublik Deutschland im Maßstab
+        1:250 000 (VG250). Das
+        <a href="https://gdz.bkg.bund.de/index.php/default/verwaltungsgebiete-1-250-000-mit-einwohnerzahlen-stand-31-12-vg250-ew-31-12.html">
+            Bundesamt für Kartographie und Geodäsie</a> dient hierfür als Quelle. Auch ist der Datensatz sowie dessen
+        Metadaten im
+        <a href="https://mis.bkg.bund.de/trefferanzeige?docuuid=bdfad649-9b1b-4e6e-bc5b-198f2c8e8314">
+            MetadatenInformationsSystem</a> näher beschrieben.
+
+    </p>
+    Folgende Verwaltungseinheiten sind enthalten (siehe auch
+    <a href="https://learn.opengeoedu.de/opendata/vorlesung/open-government-data/verwaltungsdaten-in-dach-und-eu/adm_de">opengeoedu.de</a>):
+    <table>
+        <tr>
+            <th>Verwaltungseinheiten</th>
+            <th>Beschreibung</th>
+        </tr>
+        <tr VALIGN=TOP>
+            <td style="width:25%">
+                Land
+            </td>
+            <td style="width:60%">
+                Die oberste Einheit im Datensatz, welche die 16 Bundesländer Deutschlands repräsentiert. Diese Ebene
+                kann auch als ADM1 angesehen werden.
+            </td>
+        </tr>
+        <tr VALIGN=TOP>
+            <td style="width:25%">
+                Regierungsbezirk
+            </td>
+            <td style="width:60%">
+                Auf ADM2-Ebene rangiert ein Regierungsbezirk. Diese Verwaltungseinheit liegt nur in einigen größeren
+                Flächenländern vor.
+            </td
+        </tr>
+        <tr VALIGN=TOP>
+            <td style="width:25%">
+                Kreis
+            </td>
+            <td style="width:60%">
+                Ein Landreis (ADM3) fasst mehrere Gemeinden administrativ zusammen.
+            </td>
+        </tr>
+        <tr VALIGN=TOP>
+            <td style="width:25%">
+                Verwaltungsgemeinschaft
+            </td>
+            <td style="width:60%">
+                Ein Gemeindeverband (Verwaltungsgemeinschaft) fasst mehrere Gemeinden zu einer administrativen Einheit.
+            </td>
+        </tr>
+        <tr VALIGN=TOP>
+            <td style="width:25%">
+                Gemeinde
+            </td>
+            <td style="width:60%">
+                Die Gemeinde (ADM6) ist die unterste Verwaltungs- und Gebietskörperschaftsebene in Deutschland.
+            </td>
+        </tr>
+        <tr VALIGN=TOP>
+            <td style="width:25%">
+                NUTS 1-3
+            </td>
+            <td style="width:60%">
+                Spezifische Raumgliederung der europäischen Statistik, welche auf der deutschen Verwaltungsgliederung
+                aufbaut.
+            </td>
+        </tr>
+    </table>
+    <h5>Der Amtliche Gemeindeschlüssel (AGS)</h5>
+    <p><mark>tbc</mark></p>
+    <h5>Der Amtliche Regionalschlüssel (ARS)</h5>
+    <p> Der ARS stellt die grundlegende Code-Struktur dar. Dieser ist zwölfstellig und
+        gliedert sich wie folgt:
+    </p>
+    <pre><code>1.–2. Stelle    = Kennzahl des Bundeslandes
+3. Stelle       = Kennzahl des Regierungsbezirks; wenn nicht vorhanden: 0
+4.–5. Stelle    = Kennzahl des Landkreises oder der kreisfreien Stadt
+6.–9. Stelle    = Verbandsschlüssel
+10.–12. Stelle  = Gemeindekennzahl</code></pre>
+    <p>
+        Schlüsselstelle 6 im <code>Verbandsschlüssel</code> zeigt die Art der Gemeinde an:
+    </p>
+    <pre><code>0 - verbandsfreie Gemeinde
+5 - verbandsangehörige Gemeinde
+9 - gemeindefreies Gebiet</code></pre>
+    <p>
+        Verbandsfreie Gemeinden sind neun- statt zwölfstellig. Bei ihnen wird im <b>Verbandsschlüssel</b> nach der 0 der
+        3-stellige Gemeindeschlüssel angegeben. Dieser Schlüssel wird z.B. für <code>"verwaltungsgemeinschaft"</code>
+        in den VG250 Daten verwendet.
+        <br><br>
+        Der jeweilige ARS einer Verwaltungseinheit lässt sich u.a. über das Portal
+        <a href="https://www.dcat-ap.de/def/politicalGeocoding/regionalKey/20250131.html">
+            DCAT-AP.de</a> nachsehen.
+    </p>
+    <h5>Nomenclature des unités territoriales statistiques (NUTS)</h5>
+    <p>
+        Entnommen aus den <a href="https://sgx.geodatenzentrum.de/web_public/gdz/dokumentation/deu/anlagen_vg.pdf">
+        Anlagen (S.10)</a> der VG250 Daten mit Einwohnerzahlen aus dem  MetadatenInformationsSystem:
+        "<i>Der NUTS-Code [...] repräsentiert die „europäische
+        Systematik der Gebietseinheiten für die Statistik“ des Statistischen Amtes der Europäischen Union (EUROSTAT)
+        [...]. <br>
+        Die NUTS-Regionen sind hierarchisch strukturiert, gliedern sich in 3 Ebenen und orientieren
+        sich für Deutschland mit wenigen Ausnahmen [Anm.: siehe Anlagen S.10] an den Verwaltungseinheiten. [...]</i>"
+        <br><br>
+        Der NUTS-Code für Deutschland gliedert sich wie folgt:
+    </p>
+    <pre><code>1. – 2. Stelle = NUTS 0 Kennung des Staates – für Deutschland: DE
+     3. Stelle = NUTS 1 in Deutschland: Kennung des Landes
+     4. Stelle = NUTS 2 in Deutschland: Kennung des Regierungsbezirks
+     5. Stelle = NUTS 3 in Deutschland: Kennung des Kreises</code></pre>
+    <p>NUTS-Schlüssel werden für den Abruf der Verwaltungseinheiten <code>nuts1</code> - <code>nuts3</code> benötigt.
+    </p>
+    <p>
+        Der NUTS-Code ist insgesamt 5-stellig, wobei die ersten 2 Stellen stets den Staat kennzeichnen
+        (für Deutschland „DE“) und die ersten 3 Stellen insgesamt die NUTS 1-Ebene, die ersten 4 Stellen insgesamt die
+        NUTS 2-Ebene und schließlich der 5-stellige NUTS-Code die NUTS 3-Ebene codieren.
+    </p>
+    Beispiel:
+    <ul>
+        <li>
+            NUTS 1: <i>Land</i> Berlin = <code>DE3</code>
+        </li>
+        <li>
+            NUTS 2: <i>Regierungsbezirk</i> Berlin = <code>DE30</code>
+        </li>
+        <li>
+            NUTS 3: <i>Kreis</i> Berlin = <code>DE300</code>
+        </li>
+    </ul>
+    <p>
+        Tabellen mit den NUTS-Codes für Deutschland und Europa können u.a. von
+        <a href="https://ec.europa.eu/eurostat/web/nuts/overview">eurostat</a>,
+        <a href="https://www.esf.de/portal/SharedDocs/PDFs/DE/FP-2014-2020/nuts-klassifikation.pdf?__blob=publicationFile&v=1">
+            Bundesministerium für Arbeit und Soziales</a> oder
+        <a href="https://de.wikipedia.org/wiki/NUTS:DE">Wikipedia</a> bezogen werden.
+    </p>
+
+
+    <h5><code>Schlüssel je Verwaltungseinheit</code></h5>
+    <table>
+        <tr>
+            <th>Verwaltungseinheit</th>
+            <th>Schlüssel (code)</th>
+        </tr>
+        <tr VALIGN=TOP>
+            <td style="width:25%">
+                gemeinde
+            </td>
+            <td style="width:60%">
+                Hiefür den zwölfstelligen ARS verwenden.
+            </td>
+        </tr>
+        <tr VALIGN=TOP>
+            <td style="width:25%">
+                verwaltungsgemeinschaft
+            </td>
+            <td style="width:60%">
+                Hierfür den neunstelligen Verbandsschlüssel verwenden.
+            </td>
+        </tr>
+        <tr VALIGN=TOP>
+            <td style="width:25%">
+                Kreis
+            </td>
+            <td style="width:60%">
+                Es muss ein fünfstelliger Schlüssel verwendet werden, der sich aus den ersten fünf Stellen
+                des ARS zusammensetzt. Stelle 1.–2. ist die Kennzahl des Bundeslandes, die 3. Stelle ist die Kennzahl
+                des Regierungsbezirks (wenn nicht vorhanden: 0) und Stellen 4.–5. ist die Kennzahl des Landkreises oder
+                der kreisfreien Stadt.
+            </td>
+        </tr>
+        <tr VALIGN=TOP>
+            <td style="width:25%">
+                Land
+            </td>
+            <td style="width:60%">
+                Die ersten zwei Stellen des ARS. <code>01</code>: SH - Schleswig-Holstein, <code>02</code>: HH -
+                Hamburg, <code>03</code>: NI - Niedersachsen, <code>04</code>: HB - Bremen, <code>05</code>: NW -
+                Nordrhein-Westfalen, <code>06</code>: HE - Hessen, <code>07</code>: RP - Rheinland-Pfalz,
+                <code>08</code>: BW - Baden-Württemberg, <code>09</code>: BY - Bayern, <code>10</code>: SL - Saarland,
+                <code>11</code>: BE - Berlin, <code>12</code>: BB - Brandenburg, <code>13</code>: MV -
+                Mecklenburg-Vorpommern, <code>14</code>: SN - Sachsen, <code>15</code>: ST - Sachsen-Anhalt,
+                <code>16</code>: TH - Thüringen. Siehe auch
+                <a href="https://learn.opengeoedu.de/opendata/vorlesung/open-government-data/verwaltungsdaten-in-dach-und-eu/adm_de">Verwaltungsgliederung</a>
+                des GDZ.
+            </td>
+        </tr>
+        <tr VALIGN=TOP>
+            <td style="width:25%">
+                NUTS 1-3
+            </td>
+            <td style="width:60%">
+                Ein drei- bis fünfstelliger NUTS Schlüssel, je nachdem welche NUTS-Verwaltungseinheit abgefragt wird.
+            </td>
+        </tr>
+    </table>
+    <h5>
+        <code>API Beispiele</code>
+    </h5>
+{% endblock %}
+
+{% block endpoint_link %}
+    <footer>
+        <a href="https://www.bundesdruckerei.de/de">Bundesdruckerei GmbH</a>
+        <p><a href="apidocs">Service-Endpunkt</a></p>
+    </footer>
+{% endblock %}

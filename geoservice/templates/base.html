@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geoservice-Startpage</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/simple.css') }}"/>
+</head>
+
+<body id="top">
+<header>
+    <h1><a href="/" style="color:#dcdcdc">Geoservice</a></h1>
+    <p>"The single source of truth for world boundaries"</p>
+    <nav>
+        <ul>
+            <li><a href="apidocs">Service-Endpunkt</a></li>
+            <li><a href="https://www.bundesdruckerei.de/de">Bundesdruckerei GmbH</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="text">
+        <article id="text__what">
+            {% block what %} {% endblock what %}
+            <footer>
+                <p><a href="#top">[Top]</a></p>
+            </footer>
+        </article>
+        <article id="text__start">
+
+            {% block usage %} {% endblock usage %}
+
+            <footer>
+                <p><a href="#top">[Top]</a></p>
+            </footer>
+        </article>
+        <article id="text__projekte">
+            <header>
+                <h2>Exemplarische Projekte</h2>
+            </header>
+
+            {% block example_react %} {% endblock example_react %}
+            {% block example_svelte %} {% endblock example_svelte %}
+
+            <footer>
+                <p><a href="#top">[Top]</a></p>
+            </footer>
+        </article>
+        <article id="text__endpoints">
+
+            {% block endpoint %} {% endblock endpoint %}
+
+            <footer>
+                <p><a href="#top">[Top]</a></p>
+            </footer>
+        </article>
+        <article id="text__etl_docu">
+            {% block documentation %} {% endblock documentation %}
+
+            <footer>
+                <p><a href="#top">[Top]</a></p>
+            </footer>
+        </article>
+    </section>
+</main>
+<footer>
+    <p>Created with <a href="https://github.com/kevquirk/simple.css-site">Simple.css</a> and licensed under the
+        MIT license.</p>
+</footer>
+</body>
+
+</html>

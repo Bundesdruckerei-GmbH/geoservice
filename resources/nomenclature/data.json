@@ -1,0 +1,41 @@
+[
+  {
+    "iso_name": "Deutschland",
+    "iso_code": "DEU",
+    "iso_3166_1_a2": "DE",
+    "iso_3166_1_a3": "DEU",
+    "iso_3166_1_n3": 62,
+    "independent": true,
+    "iso_3166_2": "",
+    "link_to_aerial_level": "adm0",
+    "link_to_source": "gadm",
+    "link_to_code": "DEU",
+    "link_to_name": "Deutschland"
+  },
+  {
+    "iso_name": "Frankreich",
+    "iso_code": "FRA",
+    "iso_3166_1_a2": "FR",
+    "iso_3166_1_a3": "FRA",
+    "iso_3166_1_n3": 63,
+    "independent": true,
+    "iso_3166_2": "",
+    "link_to_aerial_level": "adm0",
+    "link_to_source": "gadm",
+    "link_to_code": "FRA",
+    "link_to_name": "Frankreich"
+  },
+  {
+    "iso_name": "Frankreich",
+    "iso_code": "FRA",
+    "iso_3166_1_a2": "FR",
+    "iso_3166_1_a3": "FRA",
+    "iso_3166_1_n3": 63,
+    "independent": true,
+    "iso_3166_2": "",
+    "link_to_aerial_level": "adm0",
+    "link_to_source": "consulates",
+    "link_to_code": "FRA",
+    "link_to_name": "Frankreich"
+  }
+]

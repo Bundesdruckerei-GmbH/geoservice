@@ -1,0 +1,58 @@
+{% macro codeblock() %}
+    <div id="blockcode">
+        <pre class="code">
+            <code style="color:#6dc38f">&#9;import { MapContainer, Marker } from 'react-leaflet'</code>
+            <code style="color:#6dc38f">&#9;import { GeoserviceTiles, GeoJSON } from "@dataapplication/react-geoservice"</code>
+            <code></code>
+            <code style="color:#6dc38f">&#9;import "leaflet/dist/leaflet.css"</code>
+            <code></code>
+            <code>&#9;function App() {</code>
+            <code></code>
+            <code style="color:#179fff">&#9;&#9;&#9;const [ result ] = usePromise(</code>
+            <code style="color:#179fff">&#9;&#9;&#9;&#9;() => fetch('stats.json').then(r => r.json()),</code>
+            <code style="color:#179fff">&#9;&#9;&#9;[]</code>
+            <code style="color:#179fff">&#9;&#9;)</code>
+            <code style="color:#179fff"></code>
+            <code style="color:#179fff">&#9;&#9;function getColor(code: string): string {</code>
+            <code style="color:#179fff">&#9;&#9;&#9;if (!result || !result[code]) {</code>
+            <code style="color:#179fff">&#9;&#9;&#9;&#9;return 'gray'</code>
+            <code style="color:#179fff">&#9;&#9;&#9;}</code>
+            <code style="color:#179fff">&#9;&#9;&#9;const value = 255 * (1 - (result[code] / 80000000));</code>
+            <code style="color:#179fff">&#9;&#9;&#9;return `rgb(${value}, 255, ${value})`</code>
+            <code style="color:#179fff">&#9;&#9;}</code>
+            <code></code>
+            <code>&#9;&#9;return (</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&lt;Mapcontainer</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;className="map"</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;zoom={ 2 }</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;minZoom={ 2 }</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;maxZoom={ 13 }</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;center={ { lat: 19.5, lng: 27 } }</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&gt;</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&lt;Marker</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;&#9;title="Burgermeister"</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;&#9;position={ {</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;&#9;&#9;lat: 52.50111,</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;&#9;&#9;lng: 13.44230</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;&#9;} }</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;/&gt;</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&lt;GeoserviceTiles</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;&#9;feature={ country =></code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;&#9;&#9;!!(result ?? {})[country.properties.ADMIN_GID_0]] &&</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;&#9;&#9;&lt;GeoJSON</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;&#9;&#9;&#9;data={ country }</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;&#9;&#9;&#9;style={ {</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;weight: 1,</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;fillOpacity: 1,</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;fillColor: getColor(country.properties.ADM_GID_0),</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;&#9;&#9;&#9;} }</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;&#9;&#9;/&gt;</code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;&#9;}</code>
+            <code style="color:#e0a855"></code>
+            <code style="color:#e0a855">&#9;&#9;&#9;&#9;/&gt;</code>
+            <code style="color:#e0a855">&#9;&#9;&lt;/Mapcontainer&gt;</code>
+            <code>&#9;)</code>
+            <code>}</code>
+            <code></code>
+            <code>export default App;</code></pre></div>
+{% endmacro %}

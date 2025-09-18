@@ -1,0 +1,24 @@
+[
+  {
+    "type": "database",
+    "compatible": ["sqlite", "postgres"]
+  },
+  {
+    "type": "s3",
+    "identifier": "minio",
+    "license": "AGPL-3.0",
+    "version": ""
+  },
+  {
+    "type": "runconfig",
+    "license": false
+  },
+  {
+    "type": "custom",
+    "identifier": "swagger_ui",
+    "required_values": [],
+    "secret_values": [],
+    "license": "Apache-2.0",
+    "version": "4.19.0"
+  }
+]

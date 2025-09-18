@@ -1,0 +1,2 @@
+class GeoserviceInputException(Exception):
+    pass

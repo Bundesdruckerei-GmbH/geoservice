@@ -1,0 +1,22 @@
+[
+    {
+        "name": "aiosignal",
+        "author": "Andrew Svetlov, Martijn Pieters, Nikolay Kim"
+    },
+    {
+        "name": "frozenlist",
+        "author": "Andrew Svetlov, Marcin Konowalczyk, Martijn Pieters, Pau Freixes, Paul Colomiets"
+    },
+    {
+        "name": "kiwisolver",
+        "author": "Copyright (c) 2013, Nucleic Development Team"
+    },
+    {
+        "name": "pyarrow",
+        "author": "Apache Arrow Developers and Contributors kou, wesm, pitrou, kszucs, xhochy, nealrichardson, lidavidm, jorisvandenbossche, dependabot[bot], raulcd, westonpace, andygrove, thisisnic, bkietz, AlenkaF, jorgecarleitao, zeroshade, jonkeane, emkornfield, liyafan82, mapleFU, fsaintjacques, paleolimbot, cyb70289, assignUser, domoritz, tianchen92, pcmoritz, nevi-me, alamb"
+    },
+    {
+        "name": "scramp",
+        "author": "Contributors tlocke, fabaff, hugovk, half-duplex"
+    }
+]

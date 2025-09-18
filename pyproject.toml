@@ -1,0 +1,52 @@
+[project]
+name = "geoservice"
+version = "0.0.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "Flask",
+    "Flask-SQLAlchemy",
+    "Flask-Migrate",
+    "flask-cors",
+    "pg8000",
+    "passlib",
+    "minio",
+    "colorama",
+    "progress",
+    "requests",
+    "SQLAlchemy",
+    "GeoAlchemy2",
+    "click",
+    "Werkzeug",
+    "marshmallow>=3,<4",
+    "flask-smorest",
+    "geopandas",
+    "topojson",
+    "pyogrio>=0.10.0",
+    "shapely",
+    "matplotlib",
+    "thefuzz",
+    "pyarrow",
+    "s3fs",
+    "rasterio",
+    "gunicorn",
+]
+
+[project.scripts]
+boosterpack = "boosterpack.cli:main"
+
+[tool.setuptools.packages.find]
+
+where = ["."]
+include = ["boosterpack*"]
+
+[tool.setuptools.package-data]
+geoservice = ["**"]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "isort",
+]
