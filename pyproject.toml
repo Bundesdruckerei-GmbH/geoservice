@@ -35,12 +35,12 @@ dependencies = [
 ]
 
 [project.scripts]
-boosterpack = "boosterpack.cli:main"
+geoservice = "geoservice.cli:main"
 
 [tool.setuptools.packages.find]
 
 where = ["."]
-include = ["boosterpack*"]
+include = ["geoservice*"]
 
 [tool.setuptools.package-data]
 geoservice = ["**"]
