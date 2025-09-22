@@ -114,3 +114,8 @@ check locally if you can execute it successfully, e.g. with
 
     uv run dev.py flask example-etl-job example.json
 
+
+# Legal Information
+ 
+Copyright 2025 Bundesdruckerei GmbH
+For the license see the accompanying LICENSE.md
