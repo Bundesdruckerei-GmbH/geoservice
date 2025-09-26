@@ -1,3 +1,6 @@
+# Copyright 2025 Bundesdruckerei GmbH
+# For the license, see the accompanying file LICENSE.md.
+
 import pytest
 from geoservice.model.geoobject import Adm0, Adm1
 

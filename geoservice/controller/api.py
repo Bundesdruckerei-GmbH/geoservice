@@ -1,3 +1,6 @@
+# Copyright 2025 Bundesdruckerei GmbH
+# For the license, see the accompanying file LICENSE.md.
+
 from flask_smorest import Blueprint
 from flask import make_response
 from io import BytesIO

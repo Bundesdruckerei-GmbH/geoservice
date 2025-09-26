@@ -1,3 +1,6 @@
+# Copyright 2025 Bundesdruckerei GmbH
+# For the license, see the accompanying file LICENSE.md.
+
 from enum import Enum
 
 from marshmallow import Schema, fields, validates_schema, ValidationError
