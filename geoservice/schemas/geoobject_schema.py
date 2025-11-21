@@ -74,15 +74,31 @@ class GeoServiceArgs(Schema):
     def _get_aerial_codes(cls, level, source="gadm", codes=[]):
         if not codes:
             return []
-
-        return [x[0] for x in db.session.query(
+        
+        found_codes = [x[0] for x in db.session.query(
                 LinkTable.link_to_code
             ).where(
                 LinkTable.link_to_aerial_level == level,
                 LinkTable.link_to_source == source,
-                LinkTable.iso_3166_1_a3.in_(codes),
+                LinkTable.link_to_code.in_(codes),
             ).all()
-        ]
+        ] 
+
+        unfound_codes = [elem for elem in codes if elem not in found_codes]
+
+        if not unfound_codes:
+            return found_codes
+        
+        iso_codes = [x[0] for x in db.session.query(
+                LinkTable.link_to_code
+            ).where(
+                LinkTable.link_to_aerial_level == level,
+                LinkTable.link_to_source == source,
+                LinkTable.iso_3166_1_a3.in_(unfound_codes),
+            ).all()
+        ] 
+
+        return list(set(found_codes + iso_codes))
 
     @classmethod
     def fetch(cls, query_arguments):
