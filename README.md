@@ -48,7 +48,30 @@ To create the tables in the configured database, run
 
 ### Insert base data
 
-TO BE DONE
+To include new data in the geoservice, several steps has to be done. 
+
+#### Define structure of the datasets in the database 
+
+In the file [geoobject.py](geoservice/model/geoobject.py) already several classes are defined. If your dataset does not fit any of those classes, it is recommended to create a new class. The geoobject class already contains information about the geometry the source and so on. Similar to the other classes you can create a class based on the geoobject containing the additional required columns. 
+For this definition a new version of the database needs to be created. Use alembic to create a new version file in [geoservice/model/migrations/versions](geoservice/model/migrations/versions) by calling
+
+    uv run dev.py flask db migrate --rev-id 0014 -m YOUR_MESSAGE
+
+Afterwards check the automatically created file in the [geoservice/model/migrations/versions](geoservice/model/migrations/versions) folder for functionality and prune it to the required elements (look at the other mirgration files for help). Then uppgrade the database as described above to include the new table structure. 
+
+
+#### Define ETL import of the data in the database
+
+For each data source a file defines the ETL path. These are stored in  [geoservice/controller/data_sources](geoservice/controller/data_sources). The [data_source__base.py](geoservice/controller/data_sources/data_source__base.py) file contains a default way to import the data. For your data source you can create a file similar to the other source-specific files (data_source__YOURDATASOURCE.py). By calling 
+
+    uv run dev.py flask etl update -s YOURDATASOURCE
+
+the data are imported as defined in your file.
+
+#### Define API call of the data
+
+The API call of the datasets is defined by the files in the [geoservice/schemas](geoservice/schemas) folder. Here you can create a schema for your new source similar to the aleardy existing source schemas. Afterwards you can import it in the [api.py](geoservice/controller/api.py) file and create a flask endpoint similar to the already existing ones.  
+
 
 ## Start development server
 
