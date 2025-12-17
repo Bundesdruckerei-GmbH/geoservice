@@ -55,9 +55,9 @@ To include new data in the geoservice, several steps has to be done.
 In the file [geoobject.py](geoservice/model/geoobject.py) already several classes are defined. If your dataset does not fit any of those classes, it is recommended to create a new class. The geoobject class already contains information about the geometry the source and so on. Similar to the other classes you can create a class based on the geoobject containing the additional required columns. 
 For this definition a new version of the database needs to be created. Use alembic to create a new version file in [geoservice/model/migrations/versions](geoservice/model/migrations/versions) by calling
 
-    uv run dev.py flask db migrate --rev-id 0014 -m YOUR_MESSAGE
+    uv run dev.py flask db migrate --rev-id REVISIONNUMBER -m YOUR_MESSAGE
 
-Afterwards check the automatically created file in the [geoservice/model/migrations/versions](geoservice/model/migrations/versions) folder for functionality and prune it to the required elements (look at the other mirgration files for help). Then uppgrade the database as described above to include the new table structure. 
+Replace REVISIONNUMBER with a number higher than the highest number in [geoservice/model/migrations/versions](geoservice/model/migrations/versions) and replace YOUR_MESSAGE with a message of your choice. Afterwards check the automatically created file in the [geoservice/model/migrations/versions](geoservice/model/migrations/versions) folder for functionality and prune it to the required elements (look at the other mirgration files for help). Then upgrade the database as described above to include the new table structure. 
 
 
 #### Define ETL import of the data in the database
