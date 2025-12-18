@@ -48,11 +48,11 @@ To create the tables in the configured database, run
 
 ### Insert base data
 
-To include new data in the geoservice, several steps has to be done. 
+To include new data in the geoservice, several steps must be taken.  
 
 #### Define structure of the datasets in the database 
 
-In the file [geoobject.py](geoservice/model/geoobject.py) already several classes are defined. If your dataset does not fit any of those classes, it is recommended to create a new class. The geoobject class already contains information about the geometry the source and so on. Similar to the other classes you can create a class based on the geoobject containing the additional required columns. 
+In the file [geoobject.py](geoservice/model/geoobject.py) already several classes are defined. If your dataset does not fit any of those classes, it is recommended to create a new class. The geoobject class already contains information about the geometry the source and so on. Like the other classes you can create a class based on the geoobject containing the additional required columns. 
 For this definition a new version of the database needs to be created. Use alembic to create a new version file in [geoservice/model/migrations/versions](geoservice/model/migrations/versions) by calling
 
     uv run dev.py flask db migrate --rev-id REVISIONNUMBER -m YOUR_MESSAGE
@@ -61,7 +61,7 @@ Replace REVISIONNUMBER with a number higher than the highest number in [geoservi
 
 ##### Example 
 
-To represent an examplary test dataset stored in a gepackage with the name "testfile.gpkg" and the columns name, test_code, geometry_level, source and geometry in the database, the class definition could look like:
+To represent an exemplary test dataset stored in a geopackage with the name "testfile.gpkg" and the columns name, test_code, geometry_level, source and geometry in the database, the class definition could look like:
 
     class Testdata(Geoobject):
         test_code = db.Column(db.Unicode, nullable=False, default="")
@@ -85,7 +85,7 @@ The migration file, created by alembic, would - after some adaptions - contain t
 
 #### Define ETL import of the data in the database
 
-For each data source a file defines the ETL path. These are stored in  [geoservice/controller/data_sources](geoservice/controller/data_sources). The [data_source__base.py](geoservice/controller/data_sources/data_source__base.py) file contains a default way to import the data. For your data source you can create a file similar to the other source-specific files (data_source__YOURDATASOURCE.py). By calling 
+For each data source a file defines the ETL path. These are stored in [geoservice/controller/data_sources](geoservice/controller/data_sources). The [data_source__base.py](geoservice/controller/data_sources/data_source__base.py) file contains a default way to import the data. For your data source you can create a file like the other source-specific files (data_source__YOURDATASOURCE.py). By calling 
 
     uv run dev.py flask etl update -s YOURDATASOURCE
 
@@ -93,7 +93,7 @@ the data are imported as defined in your file.
 
 ##### Example 
 
-For the examplary dataset, the file could be named data_source__testdata.py and could contain the class DataSourceTestdata which reads the layer testfile from the testfile.gpkg and replaces the entries in the testdata table in the database where the source equals the adm_level and the geometry_level equals the simplification_level.   
+For the example dataset, the file stored in [geoservice/controller/data_sources](geoservice/controller/data_sources) could be named data_source__testdata.py and could contain the class DataSourceTestdata which reads the layer testfile from the testfile.gpkg and replaces the entries in the testdata table in the database where the source equals the adm_level and the geometry_level equals the simplification_level.   
 
     class DataSourceTestdata(DataSourceBase):
 
@@ -125,7 +125,7 @@ The API call of the datasets is defined by the files in the [geoservice/schemas]
 
 ##### Example
 
-The schema for the testdata could be stored in the file testdata_schema.py:
+The schema for the testdata could be stored in the file testdata_schema.py in the [geoservice/schemas](geoservice/schemas) folder:
 
     class TestdataParameterSchema(Schema):
         name = fields.List(fields.Str())
@@ -135,7 +135,7 @@ The schema for the testdata could be stored in the file testdata_schema.py:
             test_query = select(Testdata).filter(Testdata.name.in_(args.get('name', "")))
             return geopandas.read_postgis(test_query, con=db.engine, geom_col='geometry')
 
-After importing the schema to the api.py
+After importing the schema to the [api.py](geoservice/controller/api.py)
 
     from ..schemas.testdata_schema import TestdataParameterSchema
 
