@@ -13,7 +13,7 @@ import geoservice
 from geoservice.constants import RESOURCES_PATH, PROJECT_ROOT
 from geoservice.model import db
 from geoservice.controller.data_sources.data_source__base import DataSourceBase
-from geoservice.model.geoobject import LinkTable, Adm0, Adm1, Consulates
+from geoservice.model.geoobject import LinkTable
 
 
 
