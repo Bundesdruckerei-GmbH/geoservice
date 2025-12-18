@@ -7,7 +7,7 @@ from typing import Optional, NamedTuple
 import json
 import pandas
 from pandas import DataFrame
-from sqlalchemy import delete, true, text, bindparam
+from sqlalchemy import delete, true
 
 import geoservice
 from geoservice.constants import RESOURCES_PATH, PROJECT_ROOT
