@@ -42,3 +42,5 @@ vite.config.ts.timestamp-*
 /resources/downloads/*
 !/resources/downloads/.gitkeep
 /resources/metadata/*.json
+/resources/nomenclature/*
+!/resources/nomenclature/empty.txt
